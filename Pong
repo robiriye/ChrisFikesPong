@@ -1,0 +1,23 @@
+%imp20 rbi4 apm80
+function pong
+f = figure('Position', [1 1 400 400], 'Visible', 'off', 'MenuBar', 'none');
+movegui(f, 'center')
+buttonE = uicontrol('Style', 'pushbutton', 'position', [1 25 100 25], 'String', 'Easy', 'Callback', @easy);
+buttonM = uicontrol('Style', 'pushbutton', 'position', [100 25 100 25], 'String', 'Medium', 'Callback', @medium);
+buttonH = uicontrol('Style', 'pushbutton', 'position', [1 1 100 25], 'String', 'Hard', 'Callback', @hard);
+buttonI = uicontrol('Style', 'pushbutton', 'position', [100 1 100 25], 'String', 'Impossible', 'Callback', @impossible);
+uicontrol('Style', 'text', 'position', [50 50 80 15], 'String', 'Select Difficulty:')
+buttonStart = uicontrol('Style', 'pushbutton', 'position', [200 1 200 65], 'String', 'Start', 'Callback', @start);
+axes('Unit', 'Pixels', 'Position', [15 80 380 315])
+set(f, 'Visible', 'on')
+function easy(source, eventdata)
+end
+function medium(source, eventdata)
+end
+function hard(source, eventdata)
+end
+function impossible(source, eventdata)
+end
+function start(source, eventdata)
+end
+end
