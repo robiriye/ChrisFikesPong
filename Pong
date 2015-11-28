@@ -21,3 +21,22 @@ end
 function start(source, eventdata)
 end
 end
+% Insert callback function to call leaderboard
+names = struct('names',{'Jim','Ian','Alex','Rob','Paul','Joseph','Goose'}); %Gives preset High Scores
+highscores = struct('highscores',{'412','342', '238', '176','100','45','1'}); %Gives preset High Scores
+namecell = struct2cell(names);
+scorecell = struct2cell(highscores);
+function NewHighScore(score, scorecell, namecell)
+for i = 1:length(scorecell)
+    if score > scorecell{i}
+        fprintf('Congrats! With your score you beat the number %d player!\n',i)
+        fprintf('You beat %s! \n',namecell{i})
+        namecell{i + 1} = namecell{i}; % Moves preset player back
+        scorecell{i + 1} = scorecell{i}; % Drops previous score back
+        name = input('Enter your name: ');
+        name = namecell{i};
+        score = scorecell{i};
+        fprintf('Your score as the #%d player in the world has been saved!\n',namecell{i})
+    else
+    end
+end
